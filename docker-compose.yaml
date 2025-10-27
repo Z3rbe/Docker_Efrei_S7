@@ -1,0 +1,31 @@
+services:
+
+  database:
+    build: "database"
+    environment:
+      - POSTGRES_PASSWORD=pwd
+    volumes:
+      - db-volume:/var/lib/postgresql/data
+    networks:
+      - my-network
+
+  simple-api:
+    build: "simple-api"
+    environment:
+      - DATABASE_HOST=database
+      - DATABASE_PASSWORD=pwd
+    networks:
+      - my-network
+
+  httpd:
+    build: "http-server"
+    ports:
+      - "80:80"
+    networks:
+      - my-network
+
+networks:
+  my-network:
+
+volumes:
+  db-volume :
