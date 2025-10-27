@@ -5,10 +5,12 @@ on:
     branches:
       - main
       - develop
+      - TP2
   pull_request:
     branches:
       - main
       - develop
+      - TP2
 
 jobs:
   test-backend:
