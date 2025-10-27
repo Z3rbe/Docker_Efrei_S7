@@ -21,4 +21,4 @@ jobs:
           java-version: '21'
 
       - name: Build and test with Maven
-        run: mvn --file simple-api/pom.xml clean verify
+        run: mvn --file TP2/simple-api/pom.xml clean verify
