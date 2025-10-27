@@ -3,10 +3,9 @@ name: CI devops 2025
 on:
   push:
     branches:
-      - TP2
+      - main
+      - develop
   pull_request:
-    branches:
-      - TP2
 
 jobs:
   test-backend:
@@ -18,9 +17,8 @@ jobs:
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
-          distribution: temurin
+          distribution: corretto
           java-version: '21'
-          cache: maven
 
       - name: Build and test with Maven
         run: mvn --file simple-api/pom.xml clean verify
