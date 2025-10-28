@@ -1,0 +1,8 @@
+- name: Create container proxy
+  community.docker.docker_container:
+    name: proxy_container
+    image: z3rbe/tp-devops-http-server
+    networks:
+      - name: my_backend_network
+      - name: my_frontend_network
+

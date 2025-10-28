@@ -1,0 +1,14 @@
+- name: Run PostgreSQL container
+  community.docker.docker_container:
+    name: my-db
+    image: z3rbe/tp-devops-database
+    env:
+      MYSQL_HOST: "plm"
+      MYSQL_DATABASE: "my-db"
+      MYSQL_USER: "plm"
+      MYSQL_PASSWORD: "plm-vm"
+    networks:
+      - name: my_backend_network
+    ports:
+      - "5432:5432"
+

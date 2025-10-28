@@ -1,0 +1,12 @@
+- name: Create container
+  community.docker.docker_container:
+    name: app_container
+    image: z3rbe/tp-devops-simple-api
+    networks:
+      - name: my_backend_network
+    env:
+      MYSQL_HOST: "plm"
+      MYSQL_DATABASE: "my-db"
+      MYSQL_USER: "plm"
+      MYSQL_PASSWORD: "plm-vm"
+    state: started
