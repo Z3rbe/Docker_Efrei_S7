@@ -1,11 +1,10 @@
 - name: Run PostgreSQL container
   community.docker.docker_container:
-    name: my-db
+    name: plm
     image: z3rbe/tp-devops-database
     pull: true
     env:
-      POSTGRES_HOST: "plm"
-      POSTGRES_DATABASE: "my-db"
+      POSTGRES_DATABASE: "db"
       POSTGRES_USER: "plm"
       POSTGRES_PASSWORD: "plm-vm"
     networks:

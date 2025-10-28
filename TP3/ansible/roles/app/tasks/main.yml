@@ -1,13 +1,8 @@
 - name: Create container
   community.docker.docker_container:
-    name: app_container
+    name: simple-api
     image: z3rbe/tp-devops-simple-api
     pull: true
     networks:
       - name: my_backend_network
-    env:
-      POSTGRES_HOST: "plm"
-      POSTGRES_DATABASE: "my-db"
-      POSTGRES_USER: "plm"
-      POSTGRES_PASSWORD: "plm-vm"
     state: started
