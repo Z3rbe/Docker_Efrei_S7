@@ -2,13 +2,11 @@
   community.docker.docker_container:
     name: my-db
     image: z3rbe/tp-devops-database
+    pull: true
     env:
-      MYSQL_HOST: "plm"
-      MYSQL_DATABASE: "my-db"
-      MYSQL_USER: "plm"
-      MYSQL_PASSWORD: "plm-vm"
+      POSTGRES_HOST: "plm"
+      POSTGRES_DATABASE: "my-db"
+      POSTGRES_USER: "plm"
+      POSTGRES_PASSWORD: "plm-vm"
     networks:
       - name: my_backend_network
-    ports:
-      - "5432:5432"
-
