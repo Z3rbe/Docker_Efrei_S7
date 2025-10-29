@@ -4,7 +4,7 @@
     image: z3rbe/tp-devops-database
     pull: true
     env:
-      POSTGRES_DATABASE: "db"
+      POSTGRES_DB: "db"
       POSTGRES_USER: "plm"
       POSTGRES_PASSWORD: "plm-vm"
     networks:
